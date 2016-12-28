@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class DiceGame {
 	
-	
 	private List<Scoring> rules = new ArrayList<Scoring>();
 	
 	//open/close 
@@ -15,7 +14,7 @@ public class DiceGame {
 		this.rules.add(rule);
 	}
 	
-	public int scoreRoll(DiceRoll diceRoll) {
+	public int scoreRoll(Die[] diceRoll) {
 				
 		int score = 0;
 		for(Scoring rule : this.rules) {

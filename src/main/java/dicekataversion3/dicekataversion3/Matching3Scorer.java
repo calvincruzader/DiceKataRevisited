@@ -7,15 +7,15 @@ public class Matching3Scorer extends CountBaseRule {
 	private int threeScore;
 	private int diceValue;
 	
-	public Matching3Scorer(int dv, int tos) {
-		diceValue = dv;
-		threeScore = tos;
+	public Matching3Scorer(int diceValue, int threeScore) {
+		this.diceValue = diceValue;
+		this.threeScore = threeScore;
 	}
 	
-	public int score(DiceRoll diceRoll) {
+	public int score(Die[] diceRoll) {
 		int score = 0;
 		
-		Map<Integer, Integer> numberOfEachDie = countNumberOfDice(diceRoll.getRoll()); 
+		Map<Integer, Integer> numberOfEachDie = countNumberOfDice(diceRoll); 
 
 		if (numberOfEachDie.containsKey(diceValue)) {
 			if (numberOfEachDie.get(diceValue) >= 3) {

@@ -8,13 +8,11 @@ import org.junit.Test;
 
 public class DiceRollTest {
 
-	DiceRoll diceRoll;
 	
 	@Test 
 	public void testDiceRollValue() {
-		Die[] dice = Die.arrayOf(1,2,3,4,5);
-		diceRoll = new DiceRoll(dice);
-		assertEquals("Checks whether the roll returns what was given", 5, diceRoll.getRoll().length);
+		Die[] diceRoll = Die.arrayOf(1,2,3,4,5);
+		assertEquals("Checks whether the roll returns what was given", 5, diceRoll.length);
 	}
 
 }

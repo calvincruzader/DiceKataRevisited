@@ -8,7 +8,6 @@ import org.junit.Test;
 
 public class DiceGameTest {
 
-	DiceRoll diceRoll;
 	DiceGame diceGame;
 	
 	@Before 
@@ -33,80 +32,67 @@ public class DiceGameTest {
 	
 	@Test
 	public void test3OnesGive1000points() {
-		Die[] dice = Die.arrayOf(1,1,1,3,3);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(1,1,1,3,3);
 		assertEquals("Checks that 3 ones gives 1000 points", 1000, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void test3TwosGives200points() {
-		Die[] dice = Die.arrayOf(2,2,2,3,3);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(2,2,2,3,3);
 		assertEquals("Checks that 3 twos gives 200 points", 200, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void test3ThreesGives300points() {
-		Die[] dice = Die.arrayOf(3,3,3,2,2);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(3,3,3,2,2);
 		assertEquals("Checks that 3 threes gives 300 points", 300, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void test3FoursGives400points() {
-		Die[] dice = Die.arrayOf(4,4,4,2,2);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(4,4,4,2,2);
 		assertEquals("Checks that 3 fours gives 400 points", 400, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void test3FivesGives500points() {
-		Die[] dice = Die.arrayOf(5,5,5,2,2);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(5,5,5,2,2);
 		assertEquals("Checks that 3 fives gives 500 points", 500, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void test3SixesGives600points() {
-		Die[] dice = Die.arrayOf(6,6,6,2,2);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(6,6,6,2,2);
 		assertEquals("Checks that 3 sixes gives 600 points", 600, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void testOnesNotInMatching3Set() {
-		Die[] dice = Die.arrayOf(1,2,3,5,6);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(1,2,3,5,6);
 		assertEquals("Checks that 1 one not in a matching 3 set gives 100 points", 100, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void testFoursNotInMatching3Set() {
-		Die[] dice = Die.arrayOf(4,2,3,5,6);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(4,2,3,5,6);
 		assertEquals("Checks that 1 four not in a matching 3 set gives 40 points", 40, diceGame.scoreRoll(diceRoll));
 	}
 	
 	@Test 
 	public void testGivenSampleTests() {
-		Die[] dice = Die.arrayOf(1,2,3,4,5);
-		DiceRoll diceRoll = new DiceRoll(dice);
+		Die[] diceRoll = Die.arrayOf(1,2,3,4,5);
 		assertEquals("Checks first given sample test", 140, diceGame.scoreRoll(diceRoll));
 
-		dice = Die.arrayOf(1,1,1,2,2);
-		diceRoll = new DiceRoll(dice);
+		diceRoll = Die.arrayOf(1,1,1,2,2);
 		assertEquals("Checks second given sample test", 1000, diceGame.scoreRoll(diceRoll));
 
-		dice = Die.arrayOf(5,4,5,4,5);
-		diceRoll = new DiceRoll(dice);
+		diceRoll = Die.arrayOf(5,4,5,4,5);
 		assertEquals("Checks third given sample test", 580, diceGame.scoreRoll(diceRoll));
 
-		dice = Die.arrayOf(4,4,4,4,4);
-		diceRoll = new DiceRoll(dice);
+		diceRoll = Die.arrayOf(4,4,4,4,4);
 		assertEquals("Checks fourth given sample test", 480, diceGame.scoreRoll(diceRoll));
 
-		dice = Die.arrayOf(1,5,5,5,1);
-		diceRoll = new DiceRoll(dice);
+		diceRoll = Die.arrayOf(1,5,5,5,1);
 		assertEquals("Checks fifth given sample test", 700, diceGame.scoreRoll(diceRoll));
 
 	}
